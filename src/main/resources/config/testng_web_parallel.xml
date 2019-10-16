@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Demo Suite" verbose="0" parallel="tests" thread-count="2">
+	<listeners>
+        <listener class-name="com.quantum.listeners.QuantumReportiumListener"/>
+	</listeners>
+
+	<test name="Android Test" enabled="true">
+		<parameter name="driver.capabilities.model" value="Galaxy.*"></parameter>
+		<groups>
+			<run>
+				<include name="@WikipediaLocators" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+    <test name="LG Test" enabled="true">
+        <parameter name="driver.capabilities.model" value="Galaxy.*"></parameter>
+        <groups>
+            <run>
+                <include name="@WikipediaLocators" />
+            </run>
+        </groups>
+        <classes>
+            <class
+                    name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+        </classes>
+    </test>
+	<test name="iOS Test" enabled="true">
+		<parameter name="driver.capabilities.model" value="iPhone.*"></parameter>
+		<groups>
+			<run>
+				<include name="@WikipediaLocators" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+</suite>

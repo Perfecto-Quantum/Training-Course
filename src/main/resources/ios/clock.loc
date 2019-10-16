@@ -1,0 +1,2 @@
+clock.mainscreen.alarm.btn=xpath=//*[@label="Alarm"]
+clock.mainscreen.worldclock.btn=xpath=//*[@label="World Clock"]

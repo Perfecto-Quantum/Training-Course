@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Appium Demo Suite" verbose="0" parallel="tests">
+    <listeners>
+        <listener class-name="com.quantum.listeners.QuantumReportiumListener"/>
+    </listeners>
+
+    <test name="SMS Test Android to Android"  enabled="true">
+        <parameter name="driverNameList" value="perfectoRemote,perfectodeviiRemote"></parameter>
+        <parameter name="perfectodevii.capabilities.os" value= "Android"></parameter>
+        <parameter name="perfectodevii.capabilities.deviceName" value= "LGUS99185B89D4C"></parameter>
+        <!--<parameter name="perfectodevii.capabilities.appPackage" value= "com.android.mms"></parameter>-->
+
+        <parameter name="perfecto.capabilities.deviceName" value= "04157DF43A656B1A"></parameter>
+
+<!--
+
+        <parameter name="perfecto.capabilities.os" value= "Android"></parameter>
+
+        <parameter name="perfecto.capabilities.appPackage" value= "com.samsung.android.messaging"></parameter>
+                <parameter name="perfecto.env.resources" value="src/main/resources/android"/>
+
+
+        <parameter name="env.resources" value="src/main/resources/android"/>
+
+        -->
+        <parameter name="env.resources" value="src/main/resources/android"/>
+        <parameter name="driver.name" value="perfectodeviiRemoteDriver"/>
+
+        <groups>
+            <run>
+                <include name="@twoDevicesSMS"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+        </classes>
+    </test>
+
+</suite>
+
+
+

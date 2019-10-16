@@ -1,0 +1,5 @@
+search.field=xpath=//*[@id='searchInput']
+search.btn=xpath=//*[@class="pure-button pure-button-primary-progressive"]
+
+
+

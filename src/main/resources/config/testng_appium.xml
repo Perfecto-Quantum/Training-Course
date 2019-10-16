@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Appium Suite" verbose="0" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.quantum.listeners.QuantumReportiumListener"/>
+    </listeners>
+
+    <!-- To use actual AppiumDriver classes defined    -->
+    <!-- by driverClass property in env.resources dirs -->
+    <!-- Set driver.name value to perfectoDriver       -->
+    <parameter name="driver.name" value="perfectoRemoteDriver"/>
+
+    <test name="IOS Contacts" enabled="false">
+    <parameter name="driver.capabilities.deviceName" value="0C2210C8EBD9A1FB421A8D0A692E6C72F85E4C9E"></parameter>
+    <parameter name="env.resources" value="src/main/resources/ios"/>
+    <!--  <parameter name="env.resources" value="src/main/resources/common"/>  -->
+
+    <groups>
+        <run>
+            <include name="@appium"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+    </classes>
+</test>
+    <test name="Android Contacts" enabled="true">
+        <parameter name="driver.capabilities.model" value="Galaxy S.*"></parameter>
+        <parameter name="driver.capabilities.deviceName" value="03157DF3800C0537"></parameter>
+
+
+
+        <parameter name="env.resources" value="src/main/resources/android"/>
+        <groups>
+            <run>
+                 <include name="@appium"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+        </classes>
+    </test>
+</suite>
